@@ -1,4 +1,3 @@
-// Constants
 const FACTS = [
   "Jedina riba uzgajana u vodama Parka prirode",
   "Tradicija od 1954.",
@@ -12,22 +11,18 @@ const PICTURES = [
   "Ribogojiliste Gacka Fotografije/2. Dron/Dron (18).jpg"
 ];
 
-// DOM Elements
 const factDiv = document.getElementById("fact");
 const pic1 = document.getElementById("pic1");
 const pic2 = document.getElementById("pic2");
 
-// Variables
 let currentFactIndex = 0;
 let currentPicIndex = 0;
 
-// Initialize
 window.addEventListener('DOMContentLoaded', () => {
   initFacts();
   initSlideshow();
 });
 
-// Fact Rotation Functionality
 function initFacts() {
   factDiv.innerHTML = FACTS[currentFactIndex];
   currentFactIndex = (currentFactIndex + 1) % FACTS.length;
@@ -46,7 +41,6 @@ function changeFact() {
   }, 1000);
 }
 
-// Image Slideshow Functionality
 function initSlideshow() {
   pic1.src = PICTURES[currentPicIndex];
   pic1.classList.add("active");
@@ -70,12 +64,10 @@ function changeSlide() {
   currentPicIndex = nextIndex;
 }
 
-// Mobile Menu Functionality
 function toggleMenu() {
   const navContainer = document.querySelector('.nav-container');
   navContainer.classList.toggle('active');
   
-  // Close menu when clicking on a link (mobile)
   if (navContainer.classList.contains('active')) {
     document.querySelectorAll('.nav-container nav ul li a').forEach(link => {
       link.addEventListener('click', () => {
